@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>创建滑动菜单</title>
+	<link rel="stylesheet" href="">
+	<style>
+		.menu ul{
+			margin: 0;
+			list-style:none;
+			padding-left: 20px;
+			display: none;
+		}
+		.menu .title::before{
+			content:'▶';
+			font-size:80%;
+			color:green;
+		}
+		.menu.open .title::before{
+			content:'▼';
+		}
+		.menu.open ul{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div class="menu" id="sweeties">
+		<span class="title" id='span'>Sweeties (click me)!</span>
+		<ul>
+			<li>Eating</li>
+			<li>Palying</li>
+			<li>Sleeping</li>
+		</ul>
+	</div>
+	<script>
+		let menuElem=document.getElementById('sweeties');
+		let titleElem=menuElem.querySelector('.title');
+		/*span.onclick=function(){
+			menuElem.classList.toggle('open');
+		}*/
+		titleElem.onclick=function(){
+			menuElem.classList.toggle('open');
+		}
+	</script>
+</body>
+</html>
